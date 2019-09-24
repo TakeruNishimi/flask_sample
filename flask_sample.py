@@ -1,3 +1,5 @@
+import random as rd
+
 from flask import Flask
 
 app = Flask(__name__)
@@ -16,6 +18,15 @@ def goodbye():
 @app.route('/add/<a>/<b>/')
 def add(a, b):
     return str(int(a) + int(b))
+
+
+@app.route('/omikuji/')
+def ViewFunction():
+    kuji = ['大吉', '吉', '凶', '大凶']
+    num = rd.randint(0, len(kuji) - 1)
+    return f'今日の運勢は・・・{kuji[num]}'
+
+
 
 
 if __name__ == '__main__':
