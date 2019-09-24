@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>入力フォーム</h1>
+<form action="/" method="POST">
+    UserName: <input type="text" name="username">
+    <input type="submit">
+</form>
+
+{% if username %}
+<h2>こんにちは。{{username}}さん。</h2>
+{% endif %}
+
+
+</body>
+</html>
