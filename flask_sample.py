@@ -1,6 +1,6 @@
 import random as rd
 
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -24,8 +24,9 @@ def add(a, b):
 def ViewFunction():
     kuji = ['大吉', '吉', '凶', '大凶']
     num = rd.randint(0, len(kuji) - 1)
-    return f'今日の運勢は・・・{kuji[num]}'
-
+    # return f'今日の運勢は・・・{kuji[num]}'
+    result = kuji[num]
+    return render_template('omikuji.html', result=result)
 
 
 
